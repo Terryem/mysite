@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="equdGrFNNOGtfXLBTEAFZ7VuUIvVLkVfmpVyuxmF">
+        <title>Fin Fortune | Create Account</title>
+        
+        <link rel="icon" href="{{ url_for('static', filename='storage/app/public/photos/V28s9DMinimalist%20Red%20Green%20Financial%20Audit%20Company%20Logo%20(50%20x%2050%20px)(1).png1705143061') }}" type="image/png"/>
+
+        <!-- Use url_for to link CSS files -->
+        <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css" />
+        
+        <!-- Icons -->
+        <link href="{{ url_for('static', filename='temp/css/materialdesignicons.min.css') }}" rel="stylesheet" type="text/css" />
+        
+        <!-- Main CSS -->
+        <link href="{{ url_for('static', filename='temp/css/style.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ url_for('static', filename='temp/css/colors/default.css') }}" rel="stylesheet">
+    </head>
+    <body class="h-100 bg-soft-primary">
+       <section class="y auth">
+        <div class="container">
+            <div class="pb-3 row justify-content-center">
+
+                <div class="col-12 col-md-6 col-lg-6 col-sm-10 col-xl-6">
+                    <!-- Logo -->
+                    <a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='img/logo.png') }}" alt="" class="mb-3 img-fluid auth__logo"></a>
+
+                    <div class="bg-white shadow card login-page roundedd border-1 ">
+                        <div class="card-body">
+                            <h4 class="text-center card-title">Create an Account</h4>
+                            <form method="POST" action="{{ url_for('register') }}" class="mt-4 login-form">
+
+                                <input type="hidden" name="_token" value="equdGrFNNOGtfXLBTEAFZ7VuUIvVLkVfmpVyuxmF">
+                                <div class="row">
+                                   <div class="col-lg-12">
+                                       <div class="form-group">
+                                           <label>UserName <span class="text-danger">*</span></label>
+                                           <div class="position-relative">
+                                               <i data-feather="user" class="fea icon-sm icons"></i>
+                                               <input type="text" id="input1" class="pl-5 form-control" name="username" placeholder="Enter Unique Username" required>
+       
+                                           </div>
+                                       </div>
+                                   </div>
+       
+                                   <div class="col-lg-12">
+                                       <div class="form-group">
+                                           <label>FullName <span class="text-danger">*</span></label>
+                                           <div class="position-relative">
+                                               <i data-feather="user-check" class="fea icon-sm icons"></i>
+                                               <input type="text" class="pl-5 form-control" name="full_name" value="" id="f_name" placeholder="Enter FullName" required>
+                                           </div>
+                                       </div>
+                                   </div>
+       
+                                   <div class="col-lg-12">
+                                       <div class="form-group">
+                                           <label>Your Email <span class="text-danger">*</span></label>
+                                           <div class="position-relative">
+                                               <i data-feather="mail" class="fea icon-sm icons"></i>
+                                               <input type="email" class="pl-5 form-control" name="email" value="" id="email" placeholder="name@example.com" required>
+                                           </div>
+                                       </div>
+                                   </div>
+       
+                                   <div class="col-lg-12">
+                                       <div class="form-group">
+                                           <label>Phone Number <span class="text-danger">*</span></label>
+                                           <div class="position-relative">
+                                               <i data-feather="phone" class="fea icon-sm icons"></i>
+                                               <input type="phone" class="pl-5 form-control" name="phone" value="" id="phone" placeholder="Enter Phone number" required>
+                                           </div>
+                                       </div>
+                                   </div>
+       
+                                   <div class="col-lg-12">
+                                       <div class="form-group">
+                                           <label>Password <span class="text-danger">*</span></label>
+                                           <div class="position-relative">
+                                               <i data-feather="key" class="fea icon-sm icons"></i>
+                                               <input type="password" class="pl-5 form-control" name="password" id="password" placeholder="Enter Password" required>
+                                           </div>
+                                       </div>
+                                   </div>
+       
+                                   <div class="col-lg-12">
+                                       <div class="form-group">
+                                           <label>Confirm Password <span class="text-danger">*</span></label>
+                                           <div class="position-relative">
+                                               <i data-feather="key" class="fea icon-sm icons"></i>
+                                               <input type="password" class="pl-5 form-control" name="password_confirmation" value="" id="confirm-password" placeholder="Confirm Password" required>
+                                           </div>
+                                       </div>
+                                   </div>    
+       
+                                   <div class="col-md-12">
+                                       <div class="form-group">
+                                           <label>Country <span class="text-danger">*</span></label>
+                                           <div class="position-relative">
+                                               <i data-feather="map-pin" class="fea icon-sm icons"></i>
+                                               <select class="pl-5 form-control" name="country" id="country" required>
+                                                   <option selected disabled>Choose Country</option>
+                                                       <option value="Afganistan">Afghanistan</option>
+                                       <option value="Albania">Albania</option>
+                                       
+                                       <option value="Zambia">Zambia</option>
+                                       <option value="Zimbabwe">Zimbabwe</option>                                                </select>
+                                           </div>
+                                       </div>
+                                   </div>
+       
+                                   <div class="col-lg-12">
+                                       <div class="form-group">
+                                           <label>Referral ID <span class="text-danger">*</span></label>
+                                           <div class="position-relative">
+                                               <i data-feather="user" class="fea icon-sm icons"></i>
+                                               <input type="text" class="pl-5 form-control" name="ref_by" placeholder="Optional referral id">
+                                           </div>
+                                       </div>
+                                   </div>
+       
+                                   <div class="mb-0 col-lg-12">
+                                       <button class="btn btn-primary btn-block pad" type="submit">Register</button>
+                                   </div>
+       
+                                   <div class="mt-4 text-center col-lg-12">
+                                       <h6>Or Login With</h6>
+                                       <div class="row">
+                                           <div class="mt-3 col-12">
+                                               <a href="{{ url_for('google_login') }}" class="btn btn-block btn-light"><i class="mdi mdi-google text-danger"></i> Google</a>
+                                           </div>
+                                       </div>
+                                   </div>
+       
+                                   <div class="text-center col-12">
+                                       <p class="mt-3 mb-0"><small class="mr-2 text-dark">Already have an account?</small> <a href="{{ url_for('login') }}" class="text-dark font-weight-bold">Login</a></p>
+                                   </div>
+                                   
+                                   <div class="text-center col-12">
+                                       <p class="mt-4 mb-0"><small class="mr-2 text-dark">&copy; Copyright 2024 &nbsp; Fin Fortune &nbsp; All Rights Reserved.</small></p>
+                                   </div>
+                               </div>
+                           </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JS Scripts -->
+    <script src="{{ url_for('static', filename='temp/js/jquery-3.5.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='temp/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='temp/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='temp/js/owl.init.js') }}"></script>
+    <script src="{{ url_for('static', filename='temp/js/feather.min.js') }}"></script>
+    <!-- <script src="{{ url_for('static', filename='https://finfortune.biz/temp/js/bundle.js') }}"></script> -->
+    <script src="{{ url_for('static', filename='temp/js/bundle.js') }}"></script>
+    <script src="{{ url_for('static', filename='temp/js/app.js') }}"></script>
+    <script src="{{ url_for('static', filename='temp/js/widget.js') }}"></script>
+
+    <script>
+        $('#input1').on('keypress', function(e) {
+            return e.which !== 32;
+        });
+    </script>
+</body>
+</html>

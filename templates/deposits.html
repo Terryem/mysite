@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script type="text/javascript" src="https://js.stripe.com/v3/"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="ei4JHAxX82JuKSIVADatogyc0Pmq1eHiwfO8H5zJ">
+    <title>Solana Fortune | Fund your account</title>
+    <!-- Icon -->
+    <link rel="icon" href="{{ url_for('static', filename='storage/app/public/photos/V28s9DMinimalist Red Green Financial Audit Company Logo (50 x 50 px)(1).png1705143061') }}" type="image/png"/>
+
+    <!-- Fonts and icons -->
+    <script src="{{ url_for('static', filename='dash/js/plugin/webfont/webfont.min.js') }}"></script>
+    <!-- Sweet Alert -->
+    <script src="{{ url_for('static', filename='dash/js/plugin/sweetalert/sweetalert.min.js') }}"></script>
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='dash/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dash/css/fonts.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dash/css/atlantis.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dash/css/customs.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dash/css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dash/css/atlantis.min.css') }}">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.2/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.21/af-2.3.5/b-1.6.3/b-flash-1.6.3/b-html5-1.6.3/b-print-1.6.3/r-2.2.5/datatables.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>        
+
+    <!-- Bootstrap Notify -->
+    <script src="{{ url_for('static', filename='dash/js/plugin/bootstrap-notify/bootstrap-notify.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='dash/js/plugin/sweetalert/sweetalert.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.1/dist/alpine.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.1/dist/chart.min.js"></script>
+		<style>[wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid] {display: none;}[wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {animation-duration: 50000s;animation-name: livewireautofill;}@keyframes livewireautofill { from {} }</style>
+
+		 <!--PayPal-->
+		 <script>
+            // Add your client ID and secret
+            var PAYPAL_CLIENT = 'iidjdjdj';
+            var PAYPAL_SECRET = 'jijdjkdkdk';
+            
+            // Point your server to the PayPal API
+            var PAYPAL_ORDER_API = 'https://api.paypal.com/v2/checkout/orders/';
+        </script>
+        <script src="https://www.paypal.com/sdk/js?client-id=iidjdjdj"></script>
+		
+</head>
+<body data-background-color="dark">
+    <div id="app">
+        
+        <!--/PayPal-->
+            
+        <!--Start of Tawk.to Script-->
+        <script type="text/javascript">
+        {tawk to codess}
+        </script>
+        <!--End of Tawk.to Script-->
+		<div class="wrapper">
+			        <div class="main-header">
+    <!-- Logo Header -->
+    <div class="logo-header" data-background-color="dark">
+        <a href="{{ url_for('index') }}" class="logo" style="font-size: 27px; color:#fff;">
+            Solana Fortune
+        </a>
+        <button class="ml-auto navbar-toggler sidenav-toggler" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon">
+                <i class="icon-menu"></i>
+            </span>
+        </button>
+        <button class="topbar-toggler more"><i class="icon-options-vertical"></i></button>
+        <div class="nav-toggle">
+            <button class="btn btn-toggle toggle-sidebar">
+                <i class="icon-menu"></i>
+            </button>
+        </div>
+    </div>
+    <!-- End Logo Header -->
+
+    <!-- Navbar Header -->
+    <nav class="navbar navbar-header navbar-expand-lg" data-background-color="dark">
+        
+        <div class="container-fluid">
+            <div class="text-center d-md-block d-none">
+                <a href="{{ url_for('deposits') }}" class="pricing-action btn btn-warning btn-sm">Fund your Account</a> &nbsp;
+                <a href="{{ url_for('withdrawals') }}" class="pricing-action btn btn-danger btn-sm">Withdraw Funds</a>
+                
+            </div>
+            <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+               
+                <li class="nav-item hidden-caret">
+                    <form action="javascript:void(0)" method="post" id="styleform" class="form-inline">
+                       
+                        <div class="form-group">
+                            <label class="style_switch">
+                                <input name="style" id="style" type="checkbox" value="true" class="modes">
+                                <span class="slider round"></span>
+                            </label>
+                        </div> 
+                                                <script>document.getElementById("style").checked= true;</script>
+                                                <input type="hidden" name="_token" value="ei4JHAxX82JuKSIVADatogyc0Pmq1eHiwfO8H5zJ">
+                    </form>
+                </li>
+                               
+                                <li class="nav-item dropdown hidden-caret">
+                    <a class="nav-link" data-toggle="dropdown" href="{{ url_for('deposits') }}" aria-expanded="false">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user animated fadeIn">
+                        <div class="dropdown-user-scroll scrollbar-outer">
+                            <li>
+                                <div class="user-box">
+                                    
+                                    <div class="u-text">
+                                        <h4>{{ full_name }}</h4>
+                                        <p class="text-muted">jerry@gmail.com</p><a href="{{ url_for('account_settings') }}" class="btn btn-xs btn-secondary btn-sm">Account Settings</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{{ url_for('deposits') }}">Deposit</a>
+                                <a class="dropdown-item" href="{{ url_for('withdrawals') }}">Withdraw</a>
+                                <a class="dropdown-item" href="{{ url_for('buy_plan') }}">Buy Plan</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{{ url_for('logout') }}"
+                                    onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                                    Logout
+                                    </a>
+                                <form id="logout-form" action="href="{{ url_for('register') }}" method="POST" style="display: none;">
+                                    <input type="hidden" name="_token" value="ei4JHAxX82JuKSIVADatogyc0Pmq1eHiwfO8H5zJ">
+                                </form> 
+                            </li>
+                        </div>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+</div>
+<script type="text/javascript">
+    //create investment
+        $("#styleform").on('change',function(){
+        $.ajax({
+            url: "https://finfortune.biz/dashboard/changetheme",
+            type: 'POST',
+            data:$("#styleform").serialize(),
+            success: function (data) {
+				location.reload(true);
+            },
+            error: function (data) {
+                console.log(data);
+            },
+
+        });
+    });
+    
+</script>        <!-- Stored in resources/views/child.blade.php -->
+
+<!-- Sidebar -->
+
+<div class="sidebar sidebar-style-2" data-background-color="dark">
+    <div class="sidebar-wrapper scrollbar scrollbar-inner">
+        <div class="sidebar-content">
+            <div class="user">
+                <div class="info">
+                    <a data-toggle="collapse" href="deposits.html#collapseExample" aria-expanded="true">
+                        <span>
+                            {{ username }}
+                            <span class="caret"></span>
+                        </span>
+                    </a>
+                    <div class="clearfix"></div>
+                    <div class="collapse in" id="collapseExample">
+                        <ul class="nav">
+                            <li>
+                                <a href="account-settings.html">
+                                    <span class="link-collapse">Account Settings</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <ul class="nav nav-primary">
+                <li class="nav-item ">
+                    <a href="{{ url_for('dashboard') }}">
+                        <i class="fas fa-home"></i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+                <li class="nav-item d-md-none active ">
+                    <a href="{{ url_for('deposits') }}">
+                        <i class="fa fa-download " aria-hidden="true"></i>
+                        <p>Fund your Account</p>
+                    </a>
+                </li>
+                <li class="nav-item d-md-none  ">
+                    <a href="{{ url_for('withdrawals') }}">
+                        <i class="fa fa-arrow-alt-circle-up " aria-hidden="true"></i>
+                        <p>Withdraw Funds</p>
+                    </a>
+                </li>
+
+                <li class="nav-item ">
+                    <a href="{{ url_for('trading_history') }}">
+                        <i class="fa fa-signal " aria-hidden="true"></i>
+                        <p>Profit Record</p>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a href="{{ url_for('account_history') }}">
+                        <i class="fa fa-briefcase " aria-hidden="true"></i>
+                        <p>Transactions history</p>
+                    </a>
+                </li>
+                                    <li class="nav-item ">
+                        <a href="{{ url_for('asset_balance') }}">
+                            <i class="fa fa-coins" aria-hidden="true"></i>
+                            <p>Crypto Exchange</p>
+                        </a>
+                    </li>
+                                                
+                <li class="nav-item  ">
+                    <a data-toggle="collapse" href="{{ url_for('deposits') }}">
+                        <i class="fas fa-cubes"></i>
+                        <p>Invest</p>
+                        <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="mpack">
+                        <ul class="nav nav-collapse">
+                            <li>
+                                <a href="{{ url_for('buy_plan') }}">
+                                    <span class="sub-item">Subscribe to a Plan</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ url_for('withdrawals') }}">
+                                    <span class="sub-item">My Investment</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>  
+                <li class="nav-item ">
+                    <a href="{{ url_for('refer_user') }}">
+                        <i class="fa fa-recycle " aria-hidden="true"></i>
+                        <p>Refer Users</p>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a href="{{ url_for('withdrawals') }}">
+                        <i class="fa fa-life-ring" aria-hidden="true"></i>
+                        <p>Help/Support</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- End Sidebar -->
+        <div class="main-panel bg-dark">
+			<div class="content bg-dark">
+				<div class="page-inner">
+					<div class="mt-2 mb-4">
+						<h1 class="title1 text-light">Fund Your Account</h1>
+					</div>
+					<div>
+    </div>					<div>
+    </div>					<div class="row">
+						<div class="col-md-12">
+							<div class="card bg-dark">
+								<div class="card-body">
+									<div class="row">
+										<div class="col-md-8">
+											
+											<form action="javascript:;" method="post" id="submitpaymentform">
+												<input type="hidden" name="_token" value="ei4JHAxX82JuKSIVADatogyc0Pmq1eHiwfO8H5zJ">												<div class="row">
+													<div class="mb-4 col-md-12">
+														<h5 class="card-title text-light">Enter Amount</h5>
+														<input class="form-control text-light bg-dark" placeholder="Enter Amount" type="number" name="amount" required>
+													</div>
+													<div class="mb-4 col-md-12">
+														<input type="hidden" name="payment_method" id="paymethod">
+													</div>
+													<div class="mt-2 mb-1 col-md-12">
+														<h5 class="card-title text-light">Choose Payment Method from the list below</h5>
+													</div>
+																										<div class="mb-2 col-md-6">
+														<a style="cursor: pointer;" data-method="USDT" id="15" class="text-decoration-none" onclick="checkpamethd(this.id)">
+															<div class="rounded shadow bg-dark">
+																<div class="card-body">
+																	<span class="text-light">
+																																				  USDT
+																	</span> 
+																</div>
+															</div>
+														</a>
+													</div>
+																										<div class="mb-2 col-md-6">
+														<a style="cursor: pointer;" data-method="Paypal" id="10" class="text-decoration-none" onclick="checkpamethd(this.id)">
+															<div class="rounded shadow bg-dark">
+																<div class="card-body">
+																	<span class="text-light">
+																																				<img src="https://lulo.com" alt="" class="" style="width: 25px;">
+																																				  Paypal
+																	</span> 
+																</div>
+															</div>
+														</a>
+													</div>
+																										<div class="mb-2 col-md-6">
+														<a style="cursor: pointer;" data-method="Paystack" id="9" class="text-decoration-none" onclick="checkpamethd(this.id)">
+															<div class="rounded shadow bg-dark">
+																<div class="card-body">
+																	<span class="text-light">
+																																				<img src="data:image/png;base64,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" alt="" class="" style="width: 25px;">
+																																				  Paystack
+																	</span> 
+																</div>
+															</div>
+														</a>
+													</div>
+																										<div class="mb-2 col-md-6">
+														<a style="cursor: pointer;" data-method="Stripe" id="7" class="text-decoration-none" onclick="checkpamethd(this.id)">
+															<div class="rounded shadow bg-dark">
+																<div class="card-body">
+																	<span class="text-light">
+																																				<img src="https://lulo.com" alt="" class="" style="width: 25px;">
+																																				  Stripe
+																	</span> 
+																</div>
+															</div>
+														</a>
+													</div>
+																										<div class="mb-2 col-md-6">
+														<a style="cursor: pointer;" data-method="Ethereum" id="2" class="text-decoration-none" onclick="checkpamethd(this.id)">
+															<div class="rounded shadow bg-dark">
+																<div class="card-body">
+																	<span class="text-light">
+																																				  Ethereum
+																	</span> 
+																</div>
+															</div>
+														</a>
+													</div>
+																										<div class="mb-2 col-md-6">
+														<a style="cursor: pointer;" data-method="Bitcoin" id="1" class="text-decoration-none" onclick="checkpamethd(this.id)">
+															<div class="rounded shadow bg-dark">
+																<div class="card-body">
+																	<span class="text-light">
+																																				  Bitcoin
+																	</span> 
+																</div>
+															</div>
+														</a>
+													</div>
+																																								<div class="mt-2 mb-1 col-md-12">
+															<input type="submit" class="px-5 btn btn-primary btn-lg" value="Procced to Payment">
+														</div>
+																										
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<script>
+				let paymethod = document.querySelector('#paymethod');
+				
+				function checkpamethd(id){
+					let url = "https://finfortune.biz/dashboard/get-method" + '/' + id;
+					fetch(url)
+					.then(function(res){
+						return res.json();
+					})
+					.then(function (response){
+						paymethod.value = response;
+						$.notify({
+							// options
+							icon: 'flaticon-alarm-1',
+							title: 'Payment Method',
+							message: 'you have chosen to pay with ' + ' ' + response,
+						},{
+							// settings
+							type: 'success',
+							allow_dismiss: true,
+							newest_on_top: false,
+							placement: {
+								from: "top",
+								align: "right"
+							},
+							offset: 20,
+							spacing: 10,
+							z_index: 1031,
+							delay: 5000,
+							timer: 1000,
+							animate: {
+								enter: 'animated fadeInDown',
+								exit: 'animated fadeOutUp'
+							},
+		
+						});
+					})
+					.catch(function(err){
+						console.log(err);
+					});
+				}
+				$('#submitpaymentform').on('submit', function() {
+					//alert('love');
+					if (paymethod.value == "") {
+						$.notify({
+							// options
+							icon: 'flaticon-alarm-1',
+							title: 'Select Payment Method',
+							message: 'Please choose a payment method by clicking on it',
+						},{
+							// settings
+							type: 'danger',
+							allow_dismiss: true,
+							newest_on_top: false,
+							placement: {
+								from: "top",
+								align: "right"
+							},
+							offset: 20,
+							spacing: 10,
+							z_index: 1031,
+							delay: 5000,
+							timer: 1000,
+							animate: {
+								enter: 'animated fadeInDown',
+								exit: 'animated fadeOutUp'
+							},
+		
+						});
+					}else {
+						let makepayurl = "https://finfortune.biz/dashboard/newdeposit"
+						//console.log(makepayurl);
+						document.getElementById("submitpaymentform").action = makepayurl;
+						
+					}
+					
+				});
+			</script>
+					<footer class="footer bg-dark text-light">
+					<div class="container-fluid">
+						<div class="text-center row copyright text-align-center">
+							<p>All Rights Reserved &copy; Solana Fortune 2024</p>
+						</div>
+					</div>
+				</footer>
+			</div>
+		</div>
+	</div>
+
+				<!--   Core JS Files   -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		
+		<script src="../dash/js/core/popper.min.js"></script>
+		<script src="../dash/js/core/bootstrap.min.js"></script>
+		<script src="../dash/js/customs.js"></script>
+		
+		<!-- jQuery UI -->
+		<script src="../dash/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+		<script src="../dash/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+
+		<!-- jQuery Scrollbar -->
+		<script src="../dash/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+
+		<!-- jQuery Sparkline -->
+		<script src="../dash/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+
+		<!-- Sweet Alert -->
+		<script src="../dash/js/plugin/sweetalert/sweetalert.min.js"></script>
+		<!-- Bootstrap Notify -->
+		<script src="../dash/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+		
+		<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.21/af-2.3.5/b-1.6.3/b-flash-1.6.3/b-html5-1.6.3/b-print-1.6.3/r-2.2.5/datatables.min.js"></script>
+
+		<script src="../dash/js/atlantis.min.js"></script>
+		<script src="../dash/js/atlantis.js"></script>
+
+		<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+		<script type="text/javascript">
+			function googleTranslateElementInit() {
+			new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+			}
+		</script>
+
+		<script type="text/javascript">
+			var badWords = [ 
+				'<!--Start of Tawk.to Script-->',
+				'<script type="text/javascript">', 
+				'<!--End of Tawk.to Script-->'
+						];
+			$(':input').on('blur', function(){
+				var value = $(this).val();
+				$.each(badWords, function(idx, word){
+					value = value.replace(word, '');
+				});
+				$(this).val( value);
+			});
+		</script>
+		<script>
+			$(document).ready( function () {
+				$('#ShipTable').DataTable({
+					order: [ [0, 'desc'] ],
+					dom: 'Bfrtip',
+					buttons: [
+					'copy', 'csv', 'print', 'excel','pdf'
+				] 
+				});
+
+				
+				$(".dataTables_length select").addClass("bg-dark text-light");
+				$(".dataTables_filter input").addClass("bg-dark text-light");
+			} );
+		</script>
+		<script>
+			$(document).ready( function () {
+				$('.UserTable').DataTable({
+					order: [ [0, 'desc'] ]
+				});
+				$(".dataTables_length select").addClass("bg-dark text-light");
+				$(".dataTables_filter input").addClass("bg-dark text-light");
+			} );
+		</script>
+				<script src="{{ url_for('static', filename='livewire/livewire-id=25f025805c3c370f7e87.js') }}" data-turbo-eval="false" data-turbolinks-eval="false"></script><script data-turbo-eval="false" data-turbolinks-eval="false">window.livewire = new Livewire();window.Livewire = window.livewire;window.livewire_app_url = '';window.livewire_token = 'ei4JHAxX82JuKSIVADatogyc0Pmq1eHiwfO8H5zJ';window.deferLoadingAlpine = function (callback) {window.addEventListener('livewire:load', function () {callback();});};document.addEventListener("DOMContentLoaded", function () {window.livewire.start();});</script>
+	    
+	    
+</body>
+</html>
+
